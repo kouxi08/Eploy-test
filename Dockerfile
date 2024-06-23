@@ -2,16 +2,6 @@ FROM node:20.5.0-slim as base
 WORKDIR /usr/src/app
 COPY . /usr/src/app
 
-ARG endpoint
-ARG usessl
-ARG accesskey
-ARG secretkey
-
-ENV ENDPOINT=${endpoint}
-ENV USE_SSL=true
-ENV ACCESS_KEY=${accesskey}
-ENV SECRET_ACCESS_KEY=${secretkey}
-
 RUN npm install
 
 RUN npm run build
